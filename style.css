@@ -1,0 +1,117 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.otp-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    animation: fadeIn 1s ease;
+}
+
+h1.otp-number {
+    font-size: 3em;
+    color: #333;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: popIn 0.8s forwards;
+}
+
+.otp-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 2px solid #00aaff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.otp-input:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 8px rgba(0, 102, 255, 0.2);
+}
+
+.btn {
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: fadeInButton 1s ease forwards;
+}
+
+.btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .otp-container {
+        padding: 50px;
+    }
+
+    h1.otp-number {
+        font-size: 3.5em;
+    }
+
+    .btn {
+        padding: 15px 35px;
+    }
+}
